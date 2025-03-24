@@ -8,3 +8,6 @@ RUN upgrade
 
 # Install postfix
 RUN apt-get install postfix -y
+
+# Run postfix
+CMD ["postfix", "start-fg"]
