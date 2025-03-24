@@ -9,5 +9,8 @@ RUN upgrade
 # Install postfix
 RUN apt-get install postfix -y
 
+# Set postfix configuration
+RUN postconf -e "maillog_file = /var/log/postfix.log"
+
 # Run postfix
 CMD ["postfix", "start-fg"]
